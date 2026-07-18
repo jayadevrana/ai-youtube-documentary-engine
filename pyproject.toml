@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xmoney-mindset"
+version = "0.1.0"
+description = "Autonomous AI YouTube documentary production engine"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "openai>=1.40.0",
+  "pydantic>=2.7.0",
+  "pydantic-settings>=2.3.0",
+  "tenacity>=8.2.3",
+  "Pillow>=10.3.0"
+]
+
+[project.scripts]
+xmoney = "xmoney_mindset.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
